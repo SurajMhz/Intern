@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon</title>
+</head>
+<body>
+    <header>
+        <a href="./MainPage.html">Home</a>----
+        <a href="#Pikachu">Pikachu</a>----
+        <a href="#Charlizard">Charlizard</a>----
+        <a href="#Dragonite">Dragonite</a>----
+        <a href="#footer">About Me</a>----
+        <a href="https://www.pokemon.com/us/pokedex">Online Pokedex</a>
+    </header>
+    <main>
+        <div id="Pikachu">
+            <img src="./assets/Pikachu.jpg"  style="width: 200px; float: left; margin-right: 40px;">
+            <br style="clear: both;">
+            <h1>Pikachu </h1>
+            <p>Electric-type Mouse Pokémon. <br>Stores electricity in its cheeks and releases powerful lightning attacks.<a href="Pikachu.html">More Info</a></p>
+        </div>
+         <hr>
+
+        <div id="Charlizard">
+            <img src="./assets/lizard.jpg" style="width: 300px; float: left; margin-right: 10px;">
+            <br style="clear: both;">
+            <h1>Charlizard</h1>
+            <p>Fire/Flying-type Flame Pokémon. <br>Can fly at high altitudes and unleash fire hot enough to melt boulders.<a href="Charlizard.html">More Info</a></p>
+        </div>
+         <hr>
+
+        <div id="Dragonite">
+            <img src="/HtmlDayOne/assets/nite.jpg" style="width: 200px; float: left; margin-right: 10px;">
+            <br style="clear: both;">
+            <h1>Dragonite</h1>
+            <p>Dragon/Flying-type Dragon Pokémon. <br>Known for its kindness and incredible speed, circling the globe in 16 hours.<a href="Dragonite.html">More Info</a></p>
+        </div>
+         <hr>
+
+         <div>
+            <form enctype="multipart/form-data">
+                <h1>Tell me about Your choice</h1>
+                <select name="Pokemon" id="Selection">
+                    <option value="" selected disabled>Choose a Pokemon</option>
+                    <option value="Pikachu">Pikachu</option>
+                    <option value="Charlizard">Charlizard</option>
+                    <option value="Dragonite">Dragonite</option>
+                </select><br>
+                <h2>Send your other choise</h2>
+                <input type="text" placeholder="Pokemon's name">
+                <input type="text" placeholder="Add Description">
+                <br>
+                <label for="image">Image of Pokemon</label>
+                <input type="file" id="image">
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+         </div>
+        
+
+    </main>
+    <hr>
+    <footer id="footer">
+        <p>Hello! My name is <strong>Suraj Maharjan</strong>. A student of Malpi International College. I like playing game and try out new things.
+       <br> Hope we can get along.
+        <br>
+        Contact info:
+
+        </p>
+    </footer>
+</body>
+</html>
