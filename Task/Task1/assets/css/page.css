@@ -1,3 +1,7 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #F8F8F8;
@@ -81,15 +85,19 @@ main{
 #Tick:checked  ~ .Selector header{
     all: unset;       /* removes ALL inherited + user CSS */
   display: revert;  /* restore natural display type (block/inline/...) */
-  display: grid;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   background-color: #FFCC00;
+  gap: 0px;
 }
+
 #Tick:checked  ~ .Selector header a{
     all: unset;       /* removes ALL inherited + user CSS */
     display: revert;  /* restore natural display type (block/inline/...) */
     border-radius: 8px;
     border: solid black 3px;
     text-align: center;
+    height: 30px;
+    padding-top: 10px;
     cursor: pointer;
 }

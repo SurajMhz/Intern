@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    border: green solid 2px;
+    margin: 100px;
+    display: flex;
+}
+.container div{
+    height: 400px;
+}
+.box1{
+    background-color: beige;
+    flex-grow: 1;
+}
+.box2{
+    background-color: bisque;
+    flex-grow: 1;
+    width: 300px;
+    flex-shrink: 0;
+}
+.box3{
+    background-color: blanchedalmond;
+    flex-grow: 1;
+}
+.box4{
+    background-color: blue;
+    flex-grow: 1;
+}
