@@ -3,28 +3,35 @@
     padding: 0;
 }
 body{
-    background-color: #F8F8F8;
+    background-color: #0aa7ce;
     box-sizing: border-box;
 }
+label{
+    font-size: xx-large;
+}
 img{
+    margin-top: 40px;
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    border: solid black 2px;
+    border: solid rgb(255, 251, 10) 4px;
     object-fit: contain;
     cursor: pointer;
-    mix-blend-mode: multiply;
+    background-color: white;
+    /* mix-blend-mode: ; */
 }
 #Container{
     display: grid;
     grid-template-columns: 480px 1fr;
-    row-gap: 40px;
+
 }
 .Details{
+  
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
     padding: 10px;
     line-height: 1.5;
+    display: none;
 }
 table{
     margin-top: 12px;
@@ -45,7 +52,7 @@ td,th,tr{
 }
 #Raichu{
     grid-row: 3;
-    grid-colum: 1;
+    grid-column: 1;
 }
 #PichuDetails{
     grid-row: 1;
@@ -58,4 +65,27 @@ td,th,tr{
 #RaichuDetails{
     grid-row: 3;
     grid-column: 2;
+}
+.Toggle{
+    grid-row: 4;
+    grid-column: 2;
+    font-size: xx-large;
+}
+#Pichu:hover ~ #PichuDetails{
+    display: grid;
+    background-color: brown ;
+}
+#Pikachu:hover ~ #PikachuDetails{
+    display: grid;
+    background-color: brown ;
+}
+#Raichu:hover ~ #RaichuDetails{
+    display: grid;
+    background-color: brown ;
+}
+#Toggle:checked ~ #Container #PichuDetails,
+#Toggle:checked ~ #Container #PikachuDetails,
+#Toggle:checked ~ #Container #RaichuDetails{
+    display: grid;
+    background-color: gray;
 }
