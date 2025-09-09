@@ -60,3 +60,34 @@ Average=Average/(Data.length);
         <p>${Average}</p>
         `
     }
+
+//filter 
+function FilterAge(){
+let Table=`
+        <table class="FilterTable">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Course</th>
+                <th>Email</th>
+            </tr>
+        </table>`;
+
+let Above21=Data.filter(p=>p.age>21);
+
+    let FilterContainer=document.querySelector(".Filter");
+    FilterContainer.innerHTML=Table;
+    let FilterTable=document.querySelector(".FilterTable")
+    Above21.forEach(p=>{
+    FilterTable.innerHTML+=`
+            <tr>
+                <td>${p.id}</td>
+                <td>${p.name}</td>
+                <td>${p.age}</td>
+                <td>${p.course}</td>
+                <td>${p.email}</td>
+            </tr>
+        `
+    })
+}
