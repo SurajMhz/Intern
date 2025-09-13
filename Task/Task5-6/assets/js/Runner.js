@@ -83,22 +83,22 @@ function addPokemon(current) {
 function displayList() {
     container.innerHTML = ``;
     pokemonList.forEach((p, i) => {
-        let div = document.createElement("div");
+        const div = document.createElement("div");
         div.classList.add("pokemonItems");
         div.id = (p.name);
 
-        let image = document.createElement("img");
+        const image = document.createElement("img");
         image.src = p.image;
 
-        let name = document.createElement("p");
+        const name = document.createElement("p");
         name.innerHTML = "Name " + p.name + "<br>"
         name.classList.add("name")
 
-        let type = document.createElement("p")
+        const type = document.createElement("p")
         type.textContent = "TYPE: " + p.type;
         type.classList.add("type");
 
-        let detail = document.createElement("p");
+        const detail = document.createElement("p");
         detail.innerHTML = p.detail;
 
         div.appendChild(image);
