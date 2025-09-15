@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgba(250, 232, 206, 0.128);
+    background-color: rgba(189, 252, 116, 0.128);
 }
 
 .headCard,
@@ -69,16 +69,15 @@ body {
 .DataContainer {
     display: flex;
     flex-wrap: wrap;
-
     gap: 20px;
     margin-top: 40px;
-    margin-left: 4px;
+    margin-left: 24px;
 }
 
 .Card {
     /* fixed width per card to get 3 per row */
-    flex: 0 0 calc(33.33% - 20px);
-    max-width: calc(33.33% - 20px);
+    /* flex: 0 0 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px); */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(227, 10, 10, 0.1);
@@ -107,13 +106,9 @@ body {
 }
 
 .MiddleData tr:nth-child(3) td:nth-child(2) span {
-    /* background-color: antiquewhite; */
     background-color: rgb(255, 30, 30);
-    /* background behind text only */
     padding: 2px 4px;
-    /* optional spacing around text */
     border-radius: 3px;
-    /* optional rounded edges */
 
 }
 
@@ -164,3 +159,138 @@ body {
 /* .BottomData input:hover {
     opacity: 0.85;
 } */
+
+@media (max-width: 600px) {
+
+    .Card {
+        /* fixed width per card to get 1 per row */
+        flex: 0 0 calc(100% - 20px);
+        max-width: calc(100% - 20px);
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 919px) {
+
+    .Card {
+        /* fixed width per card to get 2 per row */
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+
+@media (min-width: 920px) {
+
+    .Card {
+        /* fixed width per card to get 3 per row */
+        flex: 0 0 calc(33.33% - 20px);
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+
+.StudentPopUp {
+    /* position: fixed;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.StudentPopUp form {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 32px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+
+.StudentPopUp form .UpperForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.StudentPopUp form .UpperForm button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+}
+
+.StudentPopUp form .UpperForm button:hover {
+    color: #e74c3c;
+}
+
+.StudentPopUp label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+    padding: 4px;
+}
+
+.StudentPopUp input,
+.StudentPopUp select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.StudentPopUp input:focus,
+.StudentPopUp select:focus {
+    border-color: #2ecc71;
+}
+
+
+.StudentPopUp .LowerForm {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.StudentPopUp .LowerForm button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.StudentPopUp .LowerForm button:first-child {
+    background: #bdc3c7;
+    color: #fff;
+}
+
+.StudentPopUp .LowerForm button:first-child:hover {
+    background: #95a5a6;
+}
+
+.StudentPopUp .LowerForm button:last-child {
+    background: #2ecc71;
+    color: #fff;
+}
+
+.StudentPopUp .LowerForm button:last-child:hover {
+    background: #27ae60;
+}

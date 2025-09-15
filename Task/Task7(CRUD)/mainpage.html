@@ -20,8 +20,9 @@
         </div>
     </header>
     <main>
+       
         <div class="DataContainer">
-            <div class="Card">
+            <!-- <div class="Card">
                 <div class="TopData">
                     <h4>Suraj Mahrjan</h4>
                 </div>
@@ -230,14 +231,57 @@
                     <input type="button" value=" Edit">
                     <input type="button" value="Delete">
                 </div>
-            </div>
-
-
+            </div> -->
         </div>
+       
 
 
 
     </main>
+    <div class="StudentPopUp">
+        <form id="Form">
+            <div class="UpperForm">
+                <label>Add New Student</label>
+                <button>X</button>
+            </div>
+
+
+            <div class="MidForm">
+                <label for="FullName">Full Name</label>
+                <input type="text" placeholder="Enter student's full name" class="FullName" required>
+                <br>
+                <label for="Email">Email</label>
+                <input type="email" placeholder="Enter email address" class="Email" required>
+                <br>
+                <label for="StudentId">StudentId</label>
+                <input type="number" placeholder="123.." class="StudentId" required>
+                <br>
+                <label for="Course">Course</label>
+                <select class="Course" required>
+                    <option value="" disabled selected>Select course</option>
+                    <option value="bcsit">BCSIT</option>
+                    <option value="bba">BBA</option>
+                    <option value="engineering">Engineering</option>
+                </select>
+                <br>
+                <label for="AcademicYear">Academinc year</label>
+                <select class="AcademicYear" required>
+                    <option value="" disabled selected>Select year level</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                </select>
+                <label for="GPA">GPA</label>
+                <input type="number" class="GPA" min="0" max="4" step="0.01" placeholder="Enter Your GPA" required>
+            </div>
+
+            <div class="LowerForm">
+                <button>Cancel</button>
+                <button type="submit" id="FormAddButton">Add Student</button>
+            </div>
+        </form>
+    </div>
 </body>
+<script src="./assets/js/Page.js" type="module"></script>
 
 </html>
