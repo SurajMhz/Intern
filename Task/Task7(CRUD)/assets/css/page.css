@@ -189,6 +189,18 @@ body {
     }
 }
 
+.ShowPopUp{
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
 
 .StudentPopUp {
     /* position: fixed;
@@ -293,4 +305,70 @@ body {
 
 .StudentPopUp .LowerForm button:last-child:hover {
     background: #27ae60;
+}
+
+.ConfirmDelete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+}
+
+.ConfirmBox {
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    font-family: Arial, sans-serif;
+}
+
+.ConfirmBox p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.ConfirmActions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.ConfirmActions .CancelBtn {
+    background: #bdc3c7;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.ConfirmActions .CancelBtn:hover {
+    background: #95a5a6;
+}
+
+.ConfirmActions .DeleteBtn {
+    background: #e74c3c;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.ConfirmActions .DeleteBtn:hover {
+    background: #5e0c03;
+}
+
+.DisplayNone{
+    display: none;
 }

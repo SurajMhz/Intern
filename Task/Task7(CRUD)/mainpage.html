@@ -12,12 +12,12 @@
     <header>
         <div class="headCard">
             <h1>Student Management System</h1>
-            <button>+ Add Student</button>
+            <button onclick="ShowPopUp()">+ Add Student</button>
         </div>
-        <div class="searchbar">
+        <!-- <div class="searchbar">
             <input id="Search" type="text" placeholder="  Search Student by name,email or studentId..">
             <input type="button" id="Filter" value="Filter">
-        </div>
+        </div> -->
     </header>
     <main>
        
@@ -238,11 +238,11 @@
 
 
     </main>
-    <div class="StudentPopUp">
+    <div class="StudentPopUp DisplayNone">
         <form id="Form">
             <div class="UpperForm">
                 <label>Add New Student</label>
-                <button>X</button>
+                <button type="button" onclick="HidePopUp()">X</button>
             </div>
 
 
@@ -276,11 +276,21 @@
             </div>
 
             <div class="LowerForm">
-                <button>Cancel</button>
+                <button type="button" onclick="HidePopUp();">Cancel</button>
                 <button type="submit" id="FormAddButton">Add Student</button>
             </div>
         </form>
     </div>
+    <div class="ConfirmDelete DisplayNone">
+        <!-- <div class="ConfirmBox">
+                <p>Are you sure you want to delete this student?</p>
+                <div class="ConfirmActions">
+                    <button class="CancelBtn">Cancel</button>
+                    <button class="DeleteBtn">Delete</button>
+                </div>
+            </div> -->
+    </div>
+
 </body>
 <script src="./assets/js/Page.js" type="module"></script>
 
