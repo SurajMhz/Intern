@@ -22,39 +22,81 @@ let EditStudentData = null;
 const StudentForm = document.getElementById("Form");
 StudentForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    CheckData();
+    Validation();
 });
-
-function CheckData() {
-    let error = false;
-    const Name = document.querySelector(".FullName").value.trim();
-    const Email = document.querySelector(".Email").value.trim();
-    const Course = document.querySelector(".Course").value.trim();
-    const StudentID = document.querySelector(".StudentId").value.trim();
-    const AcademicYear = document.querySelector(".AcademicYear").value.trim();
-    const GPA = document.querySelector(".GPA").value.trim();
-
+function Validation() {
+    let Error = false;
     let Grade = "";
+    const Name = document.querySelector(".FullName");
+    const Email = document.querySelector(".Email");
+    const Course = document.querySelector(".Course");
+    const StudentID = document.querySelector(".StudentId");
+    const AcademicYear = document.querySelector(".AcademicYear");
+    const GPA = document.querySelector(".GPA");
 
-    if (GPA >= 3.7 && GPA <= 4.0) Grade = "A+";
-    else if (GPA >= 3.3) Grade = "A";
-    else if (GPA >= 3.0) Grade = "B+";
-    else if (GPA >= 2.7) Grade = "B";
-    else if (GPA >= 2.3) Grade = "C+";
-    else if (GPA >= 2.0) Grade = "C";
-    else if (GPA >= 1.7) Grade = "D+";
-    else if (GPA >= 1.0) Grade = "D";
+    if (GPA.value.trim() >= 3.7 && GPA.value.trim() <= 4.0) Grade = "A+";
+    else if (GPA.value.trim() >= 3.3) Grade = "A";
+    else if (GPA.value.trim() >= 3.0) Grade = "B+";
+    else if (GPA.value.trim() >= 2.7) Grade = "B";
+    else if (GPA.value.trim() >= 2.3) Grade = "C+";
+    else if (GPA.value.trim() >= 2.0) Grade = "C";
+    else if (GPA.value.trim() >= 1.7) Grade = "D+";
+    else if (GPA.value.trim()>= 1.0) Grade = "D";
     else Grade = "F";
 
-    const TotalData = { name: Name, email: Email, course: Course, id: StudentID, year: AcademicYear, gpa: GPA, grade: Grade };
-    /* //(.some() is better than forEach)
-        StudentDetails.forEach(data => {
-            if (StudentID.value == data.id) {
-                alert("Data already exists.");
-                error=true;
-            }
-        });
-    */
+    const TotalData = {
+        name: Name.value.trim(),
+        email: Email.value.trim(),
+        course: Course.value.trim(),
+        id: StudentID.value.trim(),
+        year: AcademicYear.value.trim(),
+        gpa: GPA.value.trim(),
+        grade: Grade
+    };
+
+    const BelowName = document.getElementById("BelowName");
+    const BelowEmail = document.getElementById("BelowEmail");
+    const BelowId = document.getElementById("BelowId");
+    const BelowCourse = document.getElementById("BelowCourse");
+    const BelowYear = document.getElementById("BelowYear");
+    const BelowGpa = document.getElementById("BelowGpa");
+
+    // reset messages
+    BelowName.textContent = "";
+    BelowEmail.textContent = "";
+    BelowId.textContent = "";
+    BelowCourse.textContent = "";
+    BelowYear.textContent = "";
+    BelowGpa.textContent = "";
+
+    if (!Name.value.trim()) {
+        BelowName.textContent = "Name is required";
+        Error = true;
+    }
+
+    if (!Email.value.trim()) {
+        BelowEmail.textContent = "Email is required";
+        Error = true;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(Email.value)) {//regex pattern
+        BelowEmail.textContent = "Enter a valid email";
+        Error = true;
+    }
+
+    if (!Course.value.trim()) {
+        BelowCourse.textContent = "Course is required";
+        Error = true;
+    }
+
+    if (!AcademicYear.value.trim()) {
+        BelowYear.textContent = "Academic year is required";
+        Error = true;
+    }
+
+    if (!GPA.value.trim()) {
+        BelowGpa.textContent = "GPA is required";
+        Error = true;
+    }
+
     if (EditStudentData) {
         const index = StudentDetails.findIndex(s => s.id == EditStudentData.id);
         StudentDetails[index] = TotalData;
@@ -63,21 +105,64 @@ function CheckData() {
         DisplayAll(StudentDetails);
         ResetForm();
         HidePopUp();
-        ToAddNewStudent();
         return;
+    } else if (!StudentID.value.trim()) {
+        BelowId.textContent = "Student ID is required";
+        Error = true;
+    } else if (StudentDetails.some(data => data.id == StudentID.value.trim())) {
+        BelowId.textContent = "Id already Used";
+        Error = true;
     }
-    else
-        if (StudentDetails.some(data => data.id == StudentID)) {
-            alert("Data already exists.");
-            error = true;
-        }
 
-    if (!error) {
+    if (!Error) {
         LoadData(TotalData);
         ResetForm();
         HidePopUp();
     }
 }
+
+
+// function CheckData() {
+//     let error = false;
+//     const Name = document.querySelector(".FullName").value.trim();
+//     const Email = document.querySelector(".Email").value.trim();
+//     const Course = document.querySelector(".Course").value.trim();
+//     const StudentID = document.querySelector(".StudentId").value.trim();
+//     const AcademicYear = document.querySelector(".AcademicYear").value.trim();
+//     const GPA = document.querySelector(".GPA").value.trim();
+
+
+//     /* //(.some() is better than forEach)
+//         StudentDetails.forEach(data => {
+//             if (StudentID.value == data.id) {
+//                 alert("Data already exists.");
+//                 error=true;
+//             }
+//         });
+//     */
+//     if (EditStudentData) {
+//         const index = StudentDetails.findIndex(s => s.id == EditStudentData.id);
+//         StudentDetails[index] = TotalData;
+//         EditStudentData = null;
+//         localStorage.setItem("Data", JSON.stringify(StudentDetails));
+//         DisplayAll(StudentDetails);
+//         ResetForm();
+//         HidePopUp();
+//         ToAddNewStudent();
+//         return;
+//     }
+//     else
+//         if (StudentDetails.some(data => data.id == StudentID)) {
+//             alert("Data already exists.");
+//             error = true;
+//         }
+
+//     if (!error) {
+//         LoadData(TotalData);
+//         ResetForm();
+//         HidePopUp();
+//     }
+// }
 function ResetForm() {
     document.querySelector(".FullName").value = "";
     document.querySelector(".Email").value = "";
@@ -85,6 +170,7 @@ function ResetForm() {
     document.querySelector(".StudentId").value = "";
     document.querySelector(".AcademicYear").value = "";
     document.querySelector(".GPA").value = "";
+    ToAddNewStudent()
 }
 function LoadData(Data) {
     CardGen(Data);
@@ -92,10 +178,19 @@ function LoadData(Data) {
     localStorage.setItem("Data", JSON.stringify(StudentDetails));
 }
 function DeleteCard(id) {
-    StudentDetails = StudentDetails.filter(data => data.id != id);
-    localStorage.setItem("Data", JSON.stringify(StudentDetails));
-    DisplayAll(StudentDetails);
-    HidePopUp(true);
+    // StudentDetails = StudentDetails.filter(data => data.id != id);
+    // localStorage.setItem("Data", JSON.stringify(StudentDetails));
+    // DisplayAll(StudentDetails);
+    const card = document.querySelector(`.Card[data-id="${id}"]`);
+    if (card) {
+        card.classList.add("fade-out");
+        card.addEventListener("transitionend", () => {
+            StudentDetails = StudentDetails.filter(data => data.id != id);
+            localStorage.setItem("Data", JSON.stringify(StudentDetails));
+            card.remove(); //removes card with that id from the DOM or page
+        }, { once: true });
+        HidePopUp(true);
+    }
 }
 function DeletePopUp(id) {
     const ConfirmDelete = document.querySelector(".ConfirmDelete");
@@ -124,12 +219,12 @@ function EditForm(id) {
             document.querySelector(".AcademicYear").value = element.year;
             document.querySelector(".GPA").value = element.gpa;
             document.querySelector(".LowerForm").innerHTML = `
-                <button>Cancel</button>
+                <button type="button" onclick="HidePopUp()">Cancel</button>
                 <button type="submit" id="FormUpdateButton">Update Student</button>
                 `
             document.querySelector(".UpperForm").innerHTML = `
             <label>Edit Student Data</label>
-                <button>X</button>
+                <button type="button" onclick="HidePopUp()">X</button>
             `
         }
     });
@@ -138,12 +233,12 @@ function EditForm(id) {
 function ToAddNewStudent() {
     document.querySelector(".StudentId").readOnly = false;
     document.querySelector(".LowerForm").innerHTML = `
-                <button>Cancel</button>
+                <button type="button" onclick="HidePopUp()">Cancel</button>
                 <button type="submit" id="FormAddButton">Add Student</button>
                 `
     document.querySelector(".UpperForm").innerHTML = `
             <label>Add New Student</label>
-                <button>X</button>
+                <button type="button" onclick="HidePopUp()">X</button>
             `
 }
 function ShowPopUp() {
@@ -166,12 +261,12 @@ function HidePopUp(isactive) {
     }
 }
 
-/*
-    function HidePopUp(card){
-        const ConfirmDelete=document.querySelector(".ConfirmDelete");
-        ConfirmDelete.classList.remove("DisplayNone");
-    }
-*/
+
+/*  function HidePopUp(card){
+    const ConfirmDelete=document.querySelector(".ConfirmDelete");
+    ConfirmDelete.classList.remove("DisplayNone");
+}*/
+
 
 //in module all functions are local so need to make functions global so contents genereted using js can get it
 window.DeletePopUp = DeletePopUp;

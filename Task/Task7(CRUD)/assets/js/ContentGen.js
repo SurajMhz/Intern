@@ -3,6 +3,7 @@ export function CardGen(Data) {
     // Container.innerHTML = ""; // Clear old cards
     const Card = document.createElement('div');
     Card.classList.add("Card");
+    Card.dataset.id=Data.id;
 
     const TopData = document.createElement('div');
     TopData.classList.add("TopData");

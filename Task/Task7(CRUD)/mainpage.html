@@ -248,31 +248,37 @@
 
             <div class="MidForm">
                 <label for="FullName">Full Name</label>
-                <input type="text" placeholder="Enter student's full name" class="FullName" required>
-                <br>
+                <input type="text" placeholder="Enter student's full name" class="FullName" >
+                <p class="Error" id="BelowName"></p>
+                
                 <label for="Email">Email</label>
-                <input type="email" placeholder="Enter email address" class="Email" required>
-                <br>
+                <input type="email" placeholder="Enter email address" class="Email" >
+                <p class="Error" id="BelowEmail"></p>
+                
                 <label for="StudentId">StudentId</label>
-                <input type="number" placeholder="123.." class="StudentId" required>
-                <br>
+                <input type="number" placeholder="123.." class="StudentId" >
+                <p class="Error" id="BelowId"></p>
+                
                 <label for="Course">Course</label>
-                <select class="Course" required>
+                <select class="Course" >
                     <option value="" disabled selected>Select course</option>
                     <option value="bcsit">BCSIT</option>
                     <option value="bba">BBA</option>
                     <option value="engineering">Engineering</option>
                 </select>
-                <br>
+                <p class="Error" id="BelowCourse"></p>
+                
                 <label for="AcademicYear">Academinc year</label>
-                <select class="AcademicYear" required>
+                <select class="AcademicYear" >
                     <option value="" disabled selected>Select year level</option>
                     <option value="2025">2025</option>
                     <option value="2026">2026</option>
                     <option value="2027">2027</option>
                 </select>
+                <p class="Error" id="BelowYear"></p>
                 <label for="GPA">GPA</label>
-                <input type="number" class="GPA" min="0" max="4" step="0.01" placeholder="Enter Your GPA" required>
+                <input type="number" class="GPA" min="0" max="4" step="0.01" placeholder="Enter Your GPA" >
+                <p class="Error" id="BelowGpa"></p>
             </div>
 
             <div class="LowerForm">
