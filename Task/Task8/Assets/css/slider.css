@@ -5,12 +5,7 @@
 }
 
 .slider {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 300px;
+    
     overflow: hidden;
     border: 2px solid black;
 
@@ -46,9 +41,18 @@ button {
 }
 
 .prevButton{
-    left: 30%;
+    left: -32px;
 }
 
 .nextButton {
-    right: 30%;
+    right: -32px;
+}
+.container{
+    background-color: aqua;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
 }
