@@ -1,9 +1,10 @@
-import LogIn from "./assets/Components/Loginpage"
+import StartingPage from "./assets/Components/InitialPage/index.jsx"
+
 function App() {
   
   return (
     <>
-    <LogIn/>
+    <StartingPage/>
     </>
   )
 }
