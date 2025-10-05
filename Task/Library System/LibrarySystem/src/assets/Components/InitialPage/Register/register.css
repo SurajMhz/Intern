@@ -26,6 +26,7 @@
 }
 
 .buttonForm {
+  cursor: pointer;
   border: none;
   text-align: center;
   background-color: cadetblue;
