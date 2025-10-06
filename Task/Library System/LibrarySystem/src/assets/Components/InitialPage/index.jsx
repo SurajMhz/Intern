@@ -1,13 +1,13 @@
 import Register from "./Register/register";
 import LogInForm from "./LoginStuffs/Loginpage";
-import MainPage from "../MainPage/page";
+import MainPage from "../MainPage/Main/page";
 import { useEffect } from "react";
 import "./index.css"
 import { useState } from "react";
 
 function StartingPage(){
     const User=localStorage.getItem("User");
-    const initialPage = User ? "Main" : "Login";
+    const initialPage = User ? "Main" : "Main";
     const [currentPage, setCurrentPage] = useState(initialPage);
     //  useEffect(() => {
     //     const loggedUser = localStorage.getItem("User");
@@ -16,20 +16,24 @@ function StartingPage(){
     //     }
     // }, []);
     // if(d){j} goToRegister={() => setCurrentPage("register")}
-    return(
-    <div className="bodyContainer">
+    return(<>
+    
     {currentPage === "Login" && (
+      <div className="bodyContainer">
         <LogInForm 
           Update={() => setCurrentPage("Main")}
           Togo={() => setCurrentPage("Register")}
         />
+        </div>
       )}
     
     {currentPage === "Register" && (
+        <div className="bodyContainer">
         <Register 
         Update={() => setCurrentPage("Login")}
         Togo={() => setCurrentPage("Login")}
         />
+        </div>
         )}
     {currentPage === "Main" && <MainPage />}
        {/* <div> {User &&
@@ -39,7 +43,7 @@ function StartingPage(){
         })()
             
         }</div> */}
-    </div>
-    )
+    
+    </>)
 }
 export default StartingPage;
