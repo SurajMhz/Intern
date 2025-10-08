@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F8F8F8;
+    flex: content;
+}
+
+img{
+    width: 300px; 
+    height: 400px;
+    float: left;
+    margin-right: 40px;
+    mix-blend-mode:multiply;
+}
+header{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 40px;
+    font-size: 20px;
+    margin-bottom: 16px;
+    background-color: #FFCC00;
+    
+}
+header a{
+    border: black solid 2px;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+}
+header label{
+    font-size: xx-large;
+    text-align: center;
+    border: black solid 2px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    
+}
+.Pokemon{
+    display: grid;
+    grid-template-columns:400px 1fr ;
+}
+.Pokemon img{
+    grid-row: 1;
+    grid-column: 1;
+}
+.Pokemon p{
+    margin-top: 40px;
+    grid-row: 1;
+    grid-column: 2;
+    /* padding-top: 24px;
+    padding-bottom: 20px; */
+    line-height: 1.4;
+    font-size: x-large;
+}
+.Pokemon p a{
+    text-decoration: none;
+    background-color: #FFCC00;
+    border-radius: 8px;
+    border: solid black 3px;
+    padding: 4px;
+    /* cursor: pointer; */
+}
+.Pokemon p a:hover{
+    background-color: rgba(239, 174, 89, 0.541);
+}
+.Pokemon h1{
+    margin-left: 20px;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.Selector{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+#Tick:checked  ~ .Selector{
+    display: grid;
+    grid-template-columns:180px 1fr;
+}
+#Tick:checked  ~ .Selector header{
+    all: unset;       /* removes ALL inherited + user CSS */
+  display: revert;  /* restore natural display type (block/inline/...) */
+  display: flex;
+  flex-direction: column;
+  background-color: #FFCC00;
+  gap: 0px;
+}
+
+#Tick:checked  ~ .Selector header a{
+    all: unset;       /* removes ALL inherited + user CSS */
+    display: revert;  /* restore natural display type (block/inline/...) */
+    border-radius: 8px;
+    border: solid black 3px;
+    text-align: center;
+    height: 30px;
+    padding-top: 10px;
+    cursor: pointer;
+}

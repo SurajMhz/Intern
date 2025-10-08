@@ -1,0 +1,68 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: content-box;
+}
+
+.slider {
+    
+    overflow: hidden;
+    border: 2px solid black;
+
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.3s ease; /* keep smooth snap */
+    cursor: grab; /* show dragging hand */
+}
+
+.slides:active {
+    cursor: grabbing;
+}
+
+.card {
+    flex-shrink: 0; /* prevents images from shrinking when sliding */
+    width: 400px;   /* same as image width */
+    height: 300px;  /* same as image height */
+}
+.card{
+    /* background-color: rgb(176, 27, 27); */
+    border: 2px solid green;
+    justify-content: center;
+    align-content: center;
+}
+.slides img {  
+    width: 400px;
+    height: 300px;
+    cursor: pointer;
+
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prevButton{
+    left: -32px;
+}
+
+.nextButton {
+    right: -32px;
+}
+.container{
+    background-color: aqua;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 300px;
+}
