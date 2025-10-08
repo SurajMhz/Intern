@@ -1,13 +1,13 @@
 import Register from "./Register/register";
 import LogInForm from "./LoginStuffs/Loginpage";
-import MainPage from "../MainPage/Main/page";
+// import MainPage from "../MainPage/Main/page";
 import { useEffect } from "react";
 import "./index.css"
 import { useState } from "react";
 
-function StartingPage(){
+function StartingPage({MainPage}){
     const User=localStorage.getItem("User");
-    const initialPage = User ? "Main" : "Main";
+    const initialPage = User ? "Main" : "Login";
     const [currentPage, setCurrentPage] = useState(initialPage);
     //  useEffect(() => {
     //     const loggedUser = localStorage.getItem("User");
@@ -35,7 +35,7 @@ function StartingPage(){
         />
         </div>
         )}
-    {currentPage === "Main" && <MainPage />}
+    {currentPage === "Main" && MainPage() }
        {/* <div> {User &&
         (()=>{
             console.log(User)
