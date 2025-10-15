@@ -1,21 +1,36 @@
-import "../PagesCss/Home.css";
+import "../PagesCss/Form.css";
 import { useState } from "react";
+import { useEffect } from "react";
 import React from "react";
 import InputBox from "../InputBox/Button";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 let LoginData = localStorage.getItem("LoginData")
   ? JSON.parse(localStorage.getItem("LoginData"))
-  : { id: 1, name: "Suraj", email: "Suraj@", password: "Suraj" };
+  : { id: 1, name: "Suraj", email: "Suraj@gmail", password: "Suraj" };
 
 
   
 function LogInForm(){
+        let User = localStorage.getItem("User")
+        const navigate = useNavigate("");
+    
+        useEffect(() => {
+        if (User) {
+          navigate("/Home");
+        }
+      }, [User, navigate]);
+
+
+
+
+
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [epassword, setEpassword] = useState("")
     const [eemail, setEemail] = useState("");
-    const navigate= useNavigate("")
+
 
 function loginIn(e){
   let status=true;

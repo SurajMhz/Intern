@@ -6,6 +6,17 @@ import InputBox from "../InputBox/Button";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function Register() {
+            let LoginData = localStorage.getItem("User")
+            const UserCheck = useNavigate("");
+        
+            useEffect(() => {
+            if (LoginData) {
+              UserCheck("/Home");
+            }
+          }, [LoginData, UserCheck]);
+
+
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
