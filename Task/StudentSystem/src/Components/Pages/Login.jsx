@@ -1,8 +1,8 @@
-import "../PagesCss/Form.css";
+import styles from "../PagesCss/Form.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import React from "react";
-import InputBox from "../InputBox/Button";
+import InputBox from "../InputBox/InputBox";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 let LoginData = localStorage.getItem("LoginData")
@@ -70,8 +70,8 @@ e.preventDefault();
 
     return(
         <>
-        <form className="formContainer" onSubmit={loginIn}>
-          <label className="topText">Login In</label>
+        <form className={styles.formContainer} onSubmit={loginIn}>
+          <label className={styles.topText}>Login In</label>
           <InputBox
                     errorInput={eemail}
                     value={email}
@@ -91,11 +91,11 @@ e.preventDefault();
                 />
 
                 <input
-                    className="buttonForm"
+                    className={styles.buttonForm}
                     type="submit"
                     placeholder="Submit" />
 
-                    <label className="bottomLabel">Don't have a account? <Link to='/Register' className="lowerShow">Sign Up</Link></label>
+                    <label className={styles.bottomLabel}>Don't have a account? <Link to='/Register' className={styles.lowerShow}>Sign Up</Link></label>
         </form>
         </>
     )

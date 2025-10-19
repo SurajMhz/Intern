@@ -1,10 +1,11 @@
 import { use, useState } from "react";
 import React from "react";
 import { useEffect } from "react";
-import InputBox from "../InputBox/Button";
-// import "./register.css"
+import InputBox from "../InputBox/InputBox";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import styles from "../PagesCss/Form.module.css";
+
 function Register() {
             let LoginData = localStorage.getItem("User")
             const UserCheck = useNavigate("");
@@ -79,8 +80,8 @@ const navigate = useNavigate();
     }
     return (
         <>
-            <form className="formContainer" onSubmit={submitForm}>
-                <label className="topText">Create account</label>
+            <form className={styles.formContainer} onSubmit={submitForm}>
+                <label className={styles.topText}>Create account</label>
                 <InputBox
                     errorInput={ename}
                     value={name}
@@ -105,11 +106,11 @@ const navigate = useNavigate();
                     icon="l" />
 
                 <input
-                    className="buttonForm"
+                    className={styles.buttonForm}
                     type="submit"
                     placeholder="Submit" />
 
-                <label className="bottomLabel">Already have a account?<Link to='/' className="lowerShow">Log in</Link></label>
+                <label className={styles.bottomLabel}>Already have a account?<Link to='/' className={styles.lowerShow}>Log in</Link></label>
             </form>
 
         </>

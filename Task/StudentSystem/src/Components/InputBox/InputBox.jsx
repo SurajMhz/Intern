@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import "./Button.css";
+import styles from './InputBox.module.css';
 
 function InputBox({ type, label, icon, value, onChange,errorInput }) {
   let pass=false;
@@ -13,26 +13,26 @@ const [show,setShow]=useState(true);
   
   return (
     <>
-    <div className={`inputBox ${errorInput ? "errorInput" : ""}`}>
+    <div className={`${styles.inputBox} ${errorInput ? styles.errorInput : ""}`}>
       
       <input
-      className="input"
+      className={styles.input}
        value={value} 
        onChange={onChange} 
        type={show?type:"text"}
         placeholder=" "  />
-      <i className="icon">{icon}</i>
-      <label className="label">{label}</label>
+      <i className={styles.icon}>{icon}</i>
+      <label className={styles.label}>{label}</label>
     {pass && (
       <button
         type="button"
-        className="eye"
+        className={styles.eye}
         onClick={()=>setShow(s=>!s)}
       >{show?"👁️":"🙈"}</button>
    )}
 
   </div>
-    <label className="errorLabel">{errorInput}</label>
+    <label className={styles.errorLabel}>{errorInput}</label>
    
 </>
   );

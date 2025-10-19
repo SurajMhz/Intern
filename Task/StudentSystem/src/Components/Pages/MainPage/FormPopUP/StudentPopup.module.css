@@ -1,0 +1,196 @@
+.ShowPopUp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.StudentPopUp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.StudentPopUp form {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 32px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+
+.StudentPopUp form .UpperForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.StudentPopUp form .UpperForm button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #666;
+}
+
+.StudentPopUp form .UpperForm button:hover {
+    color: #e74c3c;
+}
+
+.StudentPopUp label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+    padding: 4px;
+}
+
+.StudentPopUp input,
+.StudentPopUp select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.StudentPopUp input:focus,
+.StudentPopUp select:focus {
+    border-color: #2ecc71;
+}
+
+
+.StudentPopUp .LowerForm {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.StudentPopUp .LowerForm button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.StudentPopUp .LowerForm button:first-child {
+    background: #bdc3c7;
+    color: #fff;
+}
+
+.StudentPopUp .LowerForm button:first-child:hover {
+    background: #95a5a6;
+}
+
+.StudentPopUp .LowerForm button:last-child {
+    background: #2ecc71;
+    color: #fff;
+}
+
+.StudentPopUp .LowerForm button:last-child:hover {
+    background: #27ae60;
+}
+
+.ConfirmDelete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+}
+
+.ConfirmBox {
+    background: #fff;
+    padding: 24px 32px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    font-family: Arial, sans-serif;
+}
+
+.ConfirmBox p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.ConfirmActions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.ConfirmActions .CancelBtn {
+    background: #bdc3c7;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.ConfirmActions .CancelBtn:hover {
+    background: #95a5a6;
+}
+
+.ConfirmActions .DeleteBtn {
+    background: #e74c3c;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.ConfirmActions .DeleteBtn:hover {
+    background: #5e0c03;
+}
+
+.Card {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0.9);
+}
+.Error{
+    color: #ff1c03;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.DisplayNone {
+    display: none;
+}

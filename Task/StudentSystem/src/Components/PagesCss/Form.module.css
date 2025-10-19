@@ -38,12 +38,13 @@
   height: 28px;
   border-radius: 8px;
 }
+
 .bottomLabel{
   margin-bottom: 20px;
   text-align: center;
 }
-.bottomLabel .lowerShow{
 
+.bottomLabel .lowerShow{
  border: none;
  background-color: transparent;
  color: blue;

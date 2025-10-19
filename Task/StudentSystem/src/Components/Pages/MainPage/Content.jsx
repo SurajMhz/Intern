@@ -1,24 +1,15 @@
 import React from 'react'
-import './Content.css'
+import styles from './Content.module.css'
 
-const Content = ({ onEditClick }) => {
-
-  const sampleData = [
-    { id: 1, name: 'Suraj Maharjan', course: 'CSIT', year: '2nd', grade: 'A', gpa: '3.8', email: 'suraj@gmail.com' },
-    { id: 2, name: 'Suraj Maharjan', course: 'CSIT', year: '2nd', grade: 'A', gpa: '3.8', email: 'suraj@gmail.com' },
-    { id: 3, name: 'Suraj Maharjan', course: 'CSIT', year: '2nd', grade: 'A', gpa: '3.8', email: 'suraj@gmail.com' },
-    { id: 4, name: 'Suraj Maharjan', course: 'CSIT', year: '2nd', grade: 'A', gpa: '3.8', email: 'suraj@gmail.com' },
-    { id: 5, name: 'Suraj Maharjan', course: 'CSIT', year: '2nd', grade: 'A', gpa: '3.8', email: 'suraj@gmail.com' },
-  ]
-
+const Content = ({students, onEditClick,onDeleteClick }) => {
   return (
-    <div className='DataContainer'>
-      {sampleData.map(student => (
-        <div className='Card' key={student.id}>
-          <div className='TopData'>
+    <div className={styles.DataContainer}>
+      {students.map(student => (
+        <div className={styles.Card} key={student.id}>
+          <div className={styles.TopData}>
             <h3>{student.name}</h3>
           </div>
-          <div className='MiddleData'>
+          <div className={styles.MiddleData}>
             <table>
               <tbody>
                 <tr><td>Course</td><td>{student.course}</td></tr>
@@ -29,9 +20,9 @@ const Content = ({ onEditClick }) => {
             </table>
             <p>{student.email}</p>
           </div>
-          <div className='BottomData'>
+          <div className={styles.BottomData}>
             <input type="button" value="Edit" onClick={() => onEditClick(student)}/>
-            <input type="button" value="Delete" />
+            <input type="button" value="Delete" onClick={() => onDeleteClick(student)}/>
           </div>
         </div>
       ))}
