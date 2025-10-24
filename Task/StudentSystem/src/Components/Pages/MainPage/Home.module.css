@@ -1,0 +1,25 @@
+:root[data-theme="light"] {
+  --text: hsl(0, 7%, 3%);
+  --background: hsl(0, 7%, 97%);
+  --primary: hsl(10, 10%, 55%);
+  --secondary: hsl(194, 11%, 70%);
+  --accent: hsl(255, 10%, 62%);
+}
+:root[data-theme="dark"] {
+  --text: hsl(0, 7%, 97%);
+  --background: hsl(0, 7%, 3%);
+  --primary: hsl(10, 10%, 45%);
+  --secondary: hsl(194, 11%, 30%);
+  --accent: hsl(255, 10%, 38%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:var(--background);
+    color: var(--text);
+}
