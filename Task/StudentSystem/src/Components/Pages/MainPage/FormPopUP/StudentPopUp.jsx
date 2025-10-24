@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styles from './StudentPopup.module.css'
 import InputBox from "../../../InputBox/InputBox";
 const StudentPopup = ({ editStudents, students, addStudent, data, onClose, deleteStudent, deleteData }) => {
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -21,6 +22,8 @@ const StudentPopup = ({ editStudents, students, addStudent, data, onClose, delet
   }
 
   const Proceed = () => {
+    //adding grade
+    
     let Grade = "";
     if (form.gpa >= 3.7 && form.gpa <= 4.0) Grade = "A+";
     else if (form.gpa >= 3.3) Grade = "A";
@@ -33,6 +36,8 @@ const StudentPopup = ({ editStudents, students, addStudent, data, onClose, delet
     else Grade = "F";
 
     const updatedForm = { ...form, grade: Grade }
+    // console.log(form);
+    // console.log(updatedForm);
 
     if (data) {
       // Edit existing student
@@ -40,7 +45,6 @@ const StudentPopup = ({ editStudents, students, addStudent, data, onClose, delet
         s.id === data.id ? updatedForm : s
       )
       editStudents(updatedStudents)
-      localStorage.setItem("Data", JSON.stringify(updatedStudents))
     } else {
       //Add new Data
       const existingIds = students.map(s => s.id)
@@ -48,11 +52,12 @@ const StudentPopup = ({ editStudents, students, addStudent, data, onClose, delet
       while (existingIds.includes(newId)) {
         newId++
       }
-      const newStudent = { ...form, id: newId }
+      const newStudent = { ...updatedForm, id: newId }
       addStudent(newStudent)
     }
     onClose()
   }
+
   function Validation(e) {
     e.preventDefault()
     let Error = false;
@@ -117,12 +122,21 @@ const StudentPopup = ({ editStudents, students, addStudent, data, onClose, delet
   }
 
 
+  if(deleteData){
+    return (
+      <div className={styles.StudentPopUp}>
+      <div className={styles.ConfirmBox}>
+        <p>Are you sure you want to delete this student?</p>
+        <div className={styles.ConfirmActions}>
+          <button className={styles.CancelBtn} onClick={onClose}>Cancel</button>
+          <button className={styles.DeleteBtn} onClick={DeleteProcess}>Delete</button>
+        </div>
+      </div>
+      </div>
+    )
+  }
 
-
-
-
-
-  if (!deleteData) {
+  else {
     return (
       <div className={styles.StudentPopUp}>
         <form id="Form" onSubmit={Validation}>
@@ -223,20 +237,6 @@ const StudentPopup = ({ editStudents, students, addStudent, data, onClose, delet
       </div>
     )
   }
-  else {
-    return (
-      <div className={styles.StudentPopUp}>
-      <div className={styles.ConfirmBox}>
-        <p>Are you sure you want to delete this student?</p>
-        <div className={styles.ConfirmActions}>
-          <button className={styles.CancelBtn} onClick={onClose}>Cancel</button>
-          <button className={styles.DeleteBtn} onClick={DeleteProcess}>Delete</button>
-        </div>
-      </div>
-      </div>
-    )
-  }
-
 }
 
 export default StudentPopup;

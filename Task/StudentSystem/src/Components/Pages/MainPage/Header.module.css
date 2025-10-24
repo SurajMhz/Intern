@@ -16,3 +16,12 @@
     font-size: 14px;
     cursor: pointer;
 }
+
+.Switch{
+    border-radius: 18px;
+    display: grid;
+    height: 36px;
+    place-content: center;
+    visibility: visible;
+    width: 36px;
+}

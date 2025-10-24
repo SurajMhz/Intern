@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import HeadContain from './Header'
 import Content from './Content'
 import StudentPopup from './FormPopUP/StudentPopUp.jsx'
-// import styles from "./Home.module.css"
+import styles from "./Home.module.css"
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false)
@@ -32,17 +32,20 @@ const Home = () => {
   }, [LoginData, navigate])
 
   const handleAddClick = () => {
+    setDeleteData(null)
     setEditData(null)
     setShowPopup(true)
   }
 
   const handleEditClick = (student) => {
     setEditData(student)
+    setDeleteData(null)
     setShowPopup(true)
   }
 
    const handleDeleteClick = (student)=>{
     setDeleteData(student)
+    setEditData(null)
     setShowPopup(true)
    }
 
@@ -54,7 +57,7 @@ const Home = () => {
       <Content students={students} onEditClick={handleEditClick} onDeleteClick={handleDeleteClick}/>
       {showPopup && (
         <StudentPopup
-         addStudent={(newStudent) => setStudents([...students, newStudent])}
+          addStudent={(newStudent) => setStudents([...students, newStudent])}
           editStudents={(Student) => setStudents(Student)}
           deleteStudent={(New) => setStudents(New)}
           students={students}

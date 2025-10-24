@@ -1,3 +1,20 @@
+:root[data-theme="light"] {
+  --text: hsl(0, 7%, 3%);
+  --background: hsl(0, 7%, 97%);
+  --primary: hsl(10, 10%, 55%);
+  --secondary: hsl(194, 11%, 70%);
+  --accent: hsl(255, 10%, 62%);
+}
+:root[data-theme="dark"] {
+  --text: hsl(0, 7%, 97%);
+  --background: hsl(0, 7%, 3%);
+  --primary: hsl(10, 10%, 45%);
+  --secondary: hsl(194, 11%, 30%);
+  --accent: hsl(255, 10%, 38%);
+}
+
+
+
 .DataContainer {
     display: flex;
     flex-wrap: wrap;
@@ -10,11 +27,12 @@
     /* fixed width per card to get 3 per row */
     /* flex: 0 0 calc(33.33% - 20px);
     max-width: calc(33.33% - 20px); */
-    background: #fff;
+    background: var(--secondary);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(227, 10, 10, 0.1);
     overflow: hidden;
     font-family: Arial, sans-serif;
+    color: var(--text);
 }
 
 
@@ -37,12 +55,6 @@
     text-align: right;
 }
 
-.MiddleData tr:nth-child(3) td:nth-child(2) span {
-    background-color: rgb(255, 30, 30);
-    padding: 2px 4px;
-    border-radius: 3px;
-
-}
 
 
 
@@ -54,13 +66,13 @@
 .MiddleData td:first-child {
     font-weight: bold;
     width: 40%;
-    color: #333;
+    color: var(--text);
 }
 
 .MiddleData p {
     margin: 0;
     font-size: 14px;
-    color: #555;
+    color: var(--text);
 }
 
 .BottomData {

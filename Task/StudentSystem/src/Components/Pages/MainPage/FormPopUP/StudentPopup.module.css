@@ -1,4 +1,27 @@
-.ShowPopUp {
+:root[data-theme="light"] {
+  --text: hsl(0, 7%, 3%);
+  --background: hsl(0, 7%, 97%);
+  --primary: hsl(10, 10%, 55%);
+  --secondary: hsl(194, 11%, 70%);
+  --accent: hsl(255, 10%, 62%);
+}
+:root[data-theme="dark"] {
+  --text: hsl(0, 7%, 97%);
+  --background: hsl(0, 7%, 3%);
+  --primary: hsl(10, 10%, 45%);
+  --secondary: hsl(194, 11%, 30%);
+  --accent: hsl(255, 10%, 38%);
+}
+
+
+
+
+
+
+
+
+
+/* .ShowPopUp {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,9 +30,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(211, 16, 16, 0.6);
     z-index: 1000;
-}
+} */
 
 .StudentPopUp {
     position: fixed;
@@ -22,10 +45,11 @@
     align-items: center;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1000;
+    color: var(--text);
 }
 
 .StudentPopUp form {
-    background: #fff;
+    background:var(--accent);
     border-radius: 12px;
     padding: 24px 32px;
     width: 450px;
@@ -38,6 +62,7 @@
 
 .StudentPopUp form .UpperForm {
     display: flex;
+    color: var(--text);
     justify-content: space-between;
     align-items: center;
     font-size: 1.2rem;
@@ -51,7 +76,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
-    color: #666;
+    color: var(--text);
 }
 
 .StudentPopUp form .UpperForm button:hover {
@@ -130,7 +155,8 @@
 }
 
 .ConfirmBox {
-    background: #fff;
+    background: var(--accent);
+    color: var(--text);
     padding: 24px 32px;
     border-radius: 12px;
     text-align: center;
@@ -143,7 +169,7 @@
 .ConfirmBox p {
     font-size: 1.1rem;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--text);
 }
 
 .ConfirmActions {
@@ -153,8 +179,8 @@
 }
 
 .ConfirmActions .CancelBtn {
-    background: #bdc3c7;
-    color: #fff;
+    background:  var(--primary);
+    color:  var(--text);
     padding: 10px 18px;
     border: none;
     border-radius: 6px;
