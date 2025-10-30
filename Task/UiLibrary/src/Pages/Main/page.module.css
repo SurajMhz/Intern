@@ -1,0 +1,9 @@
+.main h1 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.main p {
+  color: #555;
+  line-height: 1.6;
+}
